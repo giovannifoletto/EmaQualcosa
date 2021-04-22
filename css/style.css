@@ -13,7 +13,6 @@
   
   /* Header/logo Title */
   .header {
-    padding: 20px;
     text-align: center;
     background: #f35353;
     color: white;
@@ -60,13 +59,24 @@
     background-color: #666;
     color: white;
   }
-  
   /* Column container */
-  .row {  
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
+  .column {
+    vertical-align:middle;
+    float: left;
+    padding: 10px;
+  }
+
+  .centerImage
+    {
+    text-align:center;
+    display:block;
+    }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
   }
   
   /* Create two unequal columns that sits next to each other */
@@ -92,7 +102,8 @@
     width: 100%;
     padding: 20px;
   }
-  
+
+
   /* Footer */
   .footer {
     padding: 20px;
