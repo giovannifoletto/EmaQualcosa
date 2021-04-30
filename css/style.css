@@ -1,6 +1,8 @@
-.OnHoverObj:hover{
+.onHoverObj:hover{
     opacity: 50%;
 }
+
+/* Carlo */
 * {
     box-sizing: border-box;
   }
