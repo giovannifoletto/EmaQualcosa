@@ -4,6 +4,10 @@ function ReloadSlideMenu(){
         return document.getElementById("mobile-menu")
 }
 
-function changeColor(){
-    return ;
+function changeColor(obj){
+    return;
+}
+
+function onLoad(){
+    console.log("Ciao");
 }

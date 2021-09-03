@@ -1,5 +1,5 @@
-.onHoverObj:hover{
-    opacity: 50%;
+path:hover{
+    fill: #eee;
 }
 
 /* Carlo */
