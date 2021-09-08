@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 path:hover{
     fill: #eee;
+=======
+.OnHoverObj:hover{
+    opacity: 50%;
+>>>>>>> parent of 0d7353d (Cambiamento a ItalyMap)
 }
-
-/* Carlo */
 * {
     box-sizing: border-box;
   }
