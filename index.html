@@ -143,27 +143,5 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/scripts.js"></script>
-
-    <script>
-      $(document).ready( () => {
-          //import setOpacityValues from './js/scrips.js'
-          $('#Trento').hover( 
-              function() {
-                $('#content').html("<h1>Questa è Trento</h1>");
-                  $('#Trento').css('opacity', '50%')
-              }, 
-              function(){
-                $('#content').html("");
-                  $('#Trento').css("opacity", "100%")
-              } 
-          );
-          // Set map width
-          var page = $("windows").width();
-          $('#svgMap').width(page/2);
-          $('#svgMap').height(page/2);
-          console.log("Ciao sto eseguendo da index.js");
-          // setOpacityValues();
-      });
-    </script>
   </body>
 </html>
