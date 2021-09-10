@@ -1,3 +1,17 @@
 * {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#foot1 {
+    background-color: #FFFAFA;
+}
+
+#foot2 {
+    background-color: #F8F8FF;
 }
