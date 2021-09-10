@@ -23,22 +23,40 @@ function createPopHoverAndDiv(c){
                     <!-- <a href="#" class="card-link">Another link</a> -->
                     </div>
                 </div>`;
+    
     $('#content').html(text);
+    
+}
+
+function showPopover(c){
+    const pop = `<div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">${c.name}</h5>
+                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                    <p class="card-text">${c.info}</p>
+                    <a href="#" class="card-link">${c.link}</a>
+                    <!-- <a href="#" class="card-link">Another link</a> -->
+                    </div>
+                </div>`;
+
     $(c.id).popover({ 
         html: true,
-        title: "<span class='booked'>This is booked</span>", 
-        content: text 
+        title: "", 
+        content: pop 
       });
+    $(c.id).popover('show');
 }
 
 function createHover(a){
     $(a.id).hover(
         function() {
             createPopHoverAndDiv(a);
-            $(a.id).css('opacity', '50%')
+            showPopover(a);
+            $(a.id).css('opacity', '50%');
         },
         function(){
-            $(a.id).css("opacity", "100%")
+            $(a.id).popover('hide');
+            $(a.id).css("opacity", "100%");
         }
     );
 }
