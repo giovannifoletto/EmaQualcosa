@@ -24,6 +24,11 @@ function createPopHoverAndDiv(c){
                     </div>
                 </div>`;
     $('#content').html(text);
+    $(c.id).popover({ 
+        html: true,
+        title: "<span class='booked'>This is booked</span>", 
+        content: text 
+      });
 }
 
 function createHover(a){
@@ -247,6 +252,6 @@ $(document).ready( () =>{
     $('#svgMap').width(page/2);
     $('#svgMap').height(page/2);
     console.log("Ciao sto eseguendo da index.js");
-    // setOpacityValues();
+    
     createAllHover();
 });
