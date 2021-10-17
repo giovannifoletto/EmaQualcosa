@@ -98,7 +98,7 @@ function createHover(a) {
             $(a.id).css("opacity", "100%");
             setTimeout(function() {
                 $(a.id).popover('hide');
-            }, 200);
+            }, 500);
 
         }
     );
@@ -236,8 +236,8 @@ function createAllHover() {
         "el22": {
             "id": "#Padova",
             "name": "Padova",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "info": "Per iscriverti premi qui. ",
+            "link": "https://form.jotform.com/212316458894363"
         },
         "el23": {
             "id": "#Rovigo",
