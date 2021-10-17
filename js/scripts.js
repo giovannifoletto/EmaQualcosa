@@ -140,7 +140,7 @@ function createAllHover() {
         "el6": {
             "id": "#Modena",
             "name": "Modena",
-            "info": "Qualche informazione utile",
+            "info": "Qualche ciaoooo informazione utile",
             "link": "https://example.com"
         },
         "el7": {
