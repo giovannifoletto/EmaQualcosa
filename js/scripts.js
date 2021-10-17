@@ -116,7 +116,7 @@ function createAllHover() {
         "el2": {
             "id": "#Rimini-ForliCesena",
             "name": "Rimini Forlì Cesena",
-            "info": "Qualche informazione su questo posto",
+            "info": "Qualche poca informazione su questo posto",
             "link": "https://example.com"
         },
         "el3": {
@@ -140,7 +140,7 @@ function createAllHover() {
         "el6": {
             "id": "#Modena",
             "name": "Modena",
-            "info": "Qualche informazione utile",
+            "info": "Qualche ciaoooo informazione utile",
             "link": "https://example.com"
         },
         "el7": {
