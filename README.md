@@ -25,6 +25,9 @@
         "linkAspiranti": string,
         "info": string,
         "divisione": bool,
-        "regionale": bool, 
+        "regionale": bool
     }
 ```
+    (serve sempre la virgola a parte se è l'ultimo elemento)
+    - `divisione` serve per le regioni che hanno più di un associazione per le donazioni, e quindi hanno 4 o più link diversi
+    - `regionale: true` se hanno un sito regionale, se no riporta al sito nazionale di fidas

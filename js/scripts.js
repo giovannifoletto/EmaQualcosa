@@ -69,23 +69,48 @@ function createDiv(c) {
 }
 
 function showPopover(c) {
-    const pop = `<div class="card" id="cards">
-                    <div class="card-body">
-                    <h5 class="card-title">${c.name}</h5>
-                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                    <p class="card-text">${c.info}</p>
-                    </div>
-                    </div>
-                    <div>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="${c.linkAspiranti}" class="card-link">Clicca per diventare Donatore!</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="${c.linkDonatori}" class="card-link">Clicca per prenotare la donazione!</a>
-                            </li>
-                        </ul>
-                    </div>`;
+    let pop;
+    if (c.divisione == true) {
+        pop = "diviso";
+    } else {
+        if (c.regionale == true) {
+            pop = `<div class="card" id="cards">
+        <div class="card-body">
+        <h5 class="card-title">${c.name}</h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <p class="card-text">${c.info}</p>
+        </div>
+        </div>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="${c.linkAspiranti}" class="card-link">Clicca per diventare Donatore!</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="${c.linkDonatori}" class="card-link">Clicca per prenotare la donazione!</a>
+                </li>
+            </ul>
+        </div>`;
+        } else {
+            pop = `<div class="card" id="cards">
+            <div class="card-body">
+            <h5 class="card-title">${c.name}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Modulo Nazionale</h6>
+            <p class="card-text">${c.info}</p>
+            </div>
+            </div>
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="${c.linkAspiranti}" class="card-link">Clicca per diventare Donatore!</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="${c.linkDonatori}" class="card-link">Clicca per prenotare la donazione!</a>
+                    </li>
+                </ul>
+            </div>`;
+        }
+    }
     $(c.id).popover({
         html: true,
         title: "",
@@ -111,7 +136,6 @@ function createHover(a) {
     );
 }
 
-
 function createAllHover() {
     let idList = {
         "el1": {
@@ -126,7 +150,9 @@ function createAllHover() {
             "name": "Rimini Forlì Cesena",
             "linkDonatori": "https://fidas.it/dona-ora/",
             "linkAspiranti": "https://fidas.it/dona-ora/",
-            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale."
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el3": {
             "id": "#Ravenna",
@@ -266,6 +292,7 @@ function createAllHover() {
             "name": "Belluno",
             "info": "Qualche informazione utile",
             "link": "https://example.com",
+            "divisione": true
         },
         "el26": {
             "id": "#Pordenone",
