@@ -242,14 +242,14 @@ function createAllHover() {
         "el23": {
             "id": "#Rovigo",
             "name": "Rovigo",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "info": "Per diventare donatore o prenotare la donazione clicca qui",
+            "link": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link"
         },
         "el24": {
             "id": "#Treviso",
             "name": "Treviso",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "info": "Per diventare donatore o prenotare la donazione clicca qui",
+            "link": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link"
         },
         "el25": {
             "id": "#Belluno",
