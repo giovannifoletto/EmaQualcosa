@@ -74,11 +74,18 @@ function showPopover(c) {
                     <h5 class="card-title">${c.name}</h5>
                     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                     <p class="card-text">${c.info}</p>
-                    <a href="#" class="card-link">${c.link}</a>
-                    <!-- <a href="#" class="card-link">Another link</a> -->
                     </div>
-                </div>`;
-
+                    </div>
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="${c.linkAspiranti}" class="card-link">Clicca per diventare Donatore!</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="${c.linkDonatori}" class="card-link">Clicca per prenotare la donazione!</a>
+                            </li>
+                        </ul>
+                    </div>`;
     $(c.id).popover({
         html: true,
         title: "",
@@ -98,7 +105,7 @@ function createHover(a) {
             $(a.id).css("opacity", "100%");
             setTimeout(function() {
                 $(a.id).popover('hide');
-            }, 500);
+            }, 1500);
 
         }
     );
@@ -110,14 +117,16 @@ function createAllHover() {
         "el1": {
             "id": "#Rimini",
             "name": "Rimini",
-            "info": "Qualche informazione su questo posto",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale."
         },
         "el2": {
             "id": "#Rimini-ForliCesena",
             "name": "Rimini Forlì Cesena",
-            "info": "Qualche poca informazione su questo posto",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale."
         },
         "el3": {
             "id": "#Ravenna",
@@ -237,7 +246,8 @@ function createAllHover() {
             "id": "#Padova",
             "name": "Padova",
             "info": "Per iscriverti premi qui. ",
-            "link": "https://form.jotform.com/212316458894363"
+            "linkAspiranti": "https://form.jotform.com/212316458894363",
+            "linkDonatori": "ok"
         },
         "el23": {
             "id": "#Rovigo",
@@ -310,8 +320,8 @@ $(document).ready(() => {
     //console.log("Document ready");
     // Set map width
     var page = $("windows").width();
-    $('#svgMap').width(page / 2);
-    $('#svgMap').height(page / 2);
+    $('#svgMap').width(page);
+    $('#svgMap').height(page);
     //console.log("Ciao sto eseguendo da index.js");
 
     createAllHover();
