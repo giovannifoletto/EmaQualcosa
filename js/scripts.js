@@ -24,7 +24,7 @@ class Queue {
         } else {
             this.list.unshift(a);
             this.index++;
-            if (this.index > MAX_VALUE) {
+            if (this.index > this.MAX_VALUE) {
                 this.list.pop();
                 this.index--;
             }
@@ -49,7 +49,7 @@ function createGroupItemAction() {
 // Questa funzione utilizza la queue per mantenere il numero di elementi laterali costanti, fare
 // riferimento alla classe Queue sopra per altre informazioni
 function createDiv(c) {
-    const text = `<a href="${c.link}" class="list-group-item list-group-item-action" aria-current="true" id="action-item">
+    const text = `<a href="${c.linkAspiranti}" class="list-group-item list-group-item-action" aria-current="true" id="action-item">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">${c.name}</h5>
                     </div>
@@ -153,7 +153,6 @@ class Reg {
         this.divisione = a.divisione ? a.divisione : false;
         this.regionale = a.regionale ? a.regionale : false;
     }
-
 }
 let jsonData = [];
 
@@ -164,11 +163,11 @@ function createAllHover() {
             jsonData.push(new Reg(json[key]));
         }
     });
-    console.log(jsonData);
-    for (let key in jsonData) {
-        //console.log(idList[key]);
-        createHover(key);
-    }
+    // console.log(jsonData);
+    $(jsonData).each(function() {
+        console.log($(this)[0]);
+        createHover($(this)[0]);
+    });
 }
 
 // starter function
