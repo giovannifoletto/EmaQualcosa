@@ -46,9 +46,13 @@ function readJSON() {
     var json = $.getJSON("/data/regioni.json", function (o) {
         jsonData.push(new Reg(o));
     });
-    $("#test").html(jsonData.toString);
 }
 ;
-$(function () {
+$(document).ready((function () {
     readJSON();
-});
+    var t;
+    for (var key in jsonData) {
+        t += (key.toString());
+    }
+    $("div").text(t);
+}));

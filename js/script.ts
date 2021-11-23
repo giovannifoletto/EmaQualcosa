@@ -65,11 +65,11 @@ function readJSON(){
     
 };
 
-$(function(){
+$(document).ready((function(){
     readJSON();
-    $("#test").html(() => {
-        for(let key:any in jsonData){
-            key.toString();
-        }
-    }());
-});
+    let t:string;
+    for(let key in jsonData){
+        t += (key.toString());
+    }
+    $("div").text(t);
+}));
