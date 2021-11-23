@@ -164,10 +164,10 @@ function createAllHover() {
         }
     });
     // console.log(jsonData);
-    $(jsonData).each(function() {
+    for (let k in jsonData) {
         console.log($(this)[0]);
         createHover($(this)[0]);
-    });
+    }
 }
 
 // starter function
@@ -175,8 +175,8 @@ $(document).ready(() => {
     //console.log("Document ready");
     // Set map width
     var page = $("windows").width();
-    $('#svgMap').width(page);
-    $('#svgMap').height(page);
+    $('#svgMap').width(page * 3);
+    $('#svgMap').height(page * 3);
     //console.log("Ciao sto eseguendo da index.js");
 
     createAllHover();
