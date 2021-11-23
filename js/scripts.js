@@ -1,33 +1,3 @@
-// console.log("External file executed");
-class Queue {
-    constructor() {
-        this.list = [];
-        this.index = 0;
-    }
-
-    updateQueue() {
-        let c = "";
-        for (let i = 0; i < this.index; ++i) {
-            c += this.list[i];
-        }
-        return c;
-    }
-
-    push(a) {
-        if (typeof(a) != typeof(" ")) {
-            throw "Push error, no string given";
-        } else {
-            this.list.unshift(a);
-            this.index++;
-            if (this.index > 6) {
-                this.list.pop();
-                this.index--;
-            }
-            return "";
-        }
-    }
-}
-
 let idList = {
     "el1": {
         "id": "#Rimini",
@@ -235,7 +205,10 @@ let idList = {
         "id": "#Belluno",
         "name": "Belluno",
         "info": "Per diventare donatore o prenotare la donazione clicca qui",
-        "link": "https://example.com",
+        "linkAspirantiFeltre": "",
+        "linkAspirantiBelluno": "",
+        "linkDonatoriFeltre": "",
+        "linkDonatoriBelluno": "",
         "divisione": true
     },
     "el26": {
@@ -294,48 +267,46 @@ let idList = {
     }
 };
 
-function purifiedContent(content) {
-    let string;
-    for (var i = 0; i < content.length; ++i) {
-        if (content[i] === "'" || content[i] === '"') {
-            string += "\\\'";
-        } else {
-            string += content[i];
-        }
-    }
-    return string;
-}
-
-const Q = new Queue();
-
-function createGroupItemAction() {
-    $(`.list-group-item-action`).hover(function() {
-        $(this).addClass('active');
-    }, function() {
-        $(this).removeClass('active');
-    })
-}
-
-function createDiv(c) {
-    const text = `<a href="${c.link}" class="list-group-item list-group-item-action" aria-current="true" id="action-item">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">${c.name}</h5>
-                    </div>
-                    <p class="mb-1">${c.info}</p>
-                    <small>Click here to see the informations for this site!</small>
-                  </a>`;
-
-    Q.push(text);
-
-    $('#content').html("");
-    $('#list-group').html(Q.updateQueue());
-    createGroupItemAction();
+function createContent(a) {
+    const card = ``
+    `<div class="card">
+        <div class="card-body">
+            <h5 class="card-title">${a.name}</h5>
+            <p class="card-text">${a.info}</p>
+            <a href="${a.linkDonatori}" class="btn btn-primary">Clicca qui per prenotare la tua donazione!</a>
+            <a href="${a.linkAspiranti}" class="btn btn-primary">Clicca qui per diventare donatore!</a>
+        </div>
+     </div>`
+    ``;
+    $("#mapContent").html(card);
 }
 
 function showPopover(c) {
     let pop;
-    if (c.divisione == true) {
-        pop = "diviso";
+    if (c.divisione == true) { // BELLUNO to DO
+        pop = `<div class="card" id="cards">
+        <div class="card-body">
+        <h5 class="card-title">${c.name}</h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <p class="card-text">${c.info}</p>
+        </div>
+        </div>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="${c.linkAspirantiFeltre}" class="card-link">Clicca per diventare Donatore a Feltre!</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="${c.linkDonatoriFeltre}" class="card-link">Clicca per prenotare la donazione a Feltre!</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="${c.linkAspirantiBelluno}" class="card-link">Clicca per diventare Donatore a Belluno!</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="${c.linkDonatoriBelluno}" class="card-link">Clicca per prenotare la donazione a Belluno!</a>
+                </li>
+            </ul>
+        </div>`;
     } else {
         if (c.regionale == true) {
             pop = `<div class="card" id="cards">
@@ -383,8 +354,6 @@ function showPopover(c) {
     $(c.id).popover('show');
 }
 
-
-
 function createHover(a) {
     /*
         Questa funzione serve a gestire gli eventi quando si passa sopra la provincia
@@ -398,19 +367,19 @@ function createHover(a) {
                 $(active).popover('hide');
             }
             active = a.id;
-            createDiv(a);
             showPopover(a);
             $(this).css('opacity', '50%');
         },
         function() {
             $(this).css("opacity", "100%");
-            $(a.id).popover('hide');
+            if (active == a.id) {
+                $(a.id).popover('hide');
+            }
         }
     );
 }
 
-function createClick(a) {
-    const card = ``
+/*const card = ``
     `<div class="card">
         <div class="card-body">
             <h5 class="card-title">${a.name}</h5>
@@ -421,12 +390,43 @@ function createClick(a) {
      </div>`
     ``;
 
-    $('#content').html("");
-    $('#list-group').html(Q.updateQueue());
-    createGroupItemAction();
-
-    $(a.id).click(function() {
         $("#mapContent").html(card);
+        */
+
+function createClick(a) {
+    let content = "";
+    if (a.divisione != true) {
+        content = `<div class="card" id="move">
+        <div class="card-body">
+            <h5 class="card-title">${a.name}</h5>
+            <p class="card-text">${a.info}</p>
+            <div class="container text-center">
+                    <a href="${a.linkDonatori}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione!</a>
+                    <a href="${a.linkAspiranti}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore!</a>
+                </div>
+            </div>
+        </div>
+     </div>`;
+    } else {
+        content = `<div class="card" id="move">
+    <div class="card-body">
+        <h5 class="card-title">${a.name}</h5>
+        <p class="card-text">${a.info}</p>
+        <div class="container text-center">
+                <a href="${a.linkDonatoriFelte}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Feltre!</a>
+                <a href="${a.linkAspirantiFeltre}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Feltre!</a>
+                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Belluno!</a>
+                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Belluno!</a>
+            </div>
+        </div>
+    </div>
+ </div>`;
+    }
+    $(a.id).click(function() {
+        $("#mapContent").html(content);
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#move").offset().top
+        }, 1000);
     });
 }
 
@@ -436,7 +436,7 @@ function createAllHover() {
     for (let key in idList) {
         //console.log(idList[key]);
         createHover(idList[key]);
-        //createClick(idList[key]);
+        createClick(idList[key]);
     }
 }
 
@@ -455,7 +455,12 @@ function inizializeInput() {
 
 // funzione per la ricerca
 function eventSubmit(s) {
-    console.log(s);
+    $.each(idList, function(i, v) {
+        if (v.name.search(new RegExp(/peter/i)) != -1) {
+            $(v.id).toggle();
+            return;
+        }
+    });
 }
 
 $(document).ready(() => {
