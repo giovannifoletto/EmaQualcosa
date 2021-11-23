@@ -212,9 +212,9 @@ let idList = {
         "name": "Belluno",
         "info": "",
         "linkAspirantiFeltre": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
-        "linkAspirantiBelluno": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
+        "linkAspirantiBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "linkDonatoriFeltre": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
-        "linkDonatoriBelluno": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
+        "linkDonatoriBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "divisione": true
     },
     "el26": {
