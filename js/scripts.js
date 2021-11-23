@@ -1,9 +1,14 @@
-// console.log("External file executed");
-
 class Queue {
+    /*
+    Classe per implementare una coda, necessaria per lo scorrere lineare del carousello delle informazioni.
+    Implementazione di base con solo i metodi necessari.
+    MAX_VALUE indica il massimo valore di elementi nel carousello laterale.
+    */
     constructor() {
         this.list = [];
         this.index = 0;
+        // per modificare il numero di elementi nel carousello laterale modificare questa variabile
+        const MAX_VALUE = 6;
     }
 
     updateQueue() {
@@ -13,14 +18,13 @@ class Queue {
         }
         return c;
     }
-
     push(a) {
         if (typeof(a) != typeof(" ")) {
             throw "Push error, no string given";
         } else {
             this.list.unshift(a);
             this.index++;
-            if (this.index > 6) {
+            if (this.index > MAX_VALUE) {
                 this.list.pop();
                 this.index--;
             }
@@ -29,21 +33,10 @@ class Queue {
     }
 }
 
-
-function purifiedContent(content) {
-    let string;
-    for (var i = 0; i < content.length; ++i) {
-        if (content[i] === "'" || content[i] === '"') {
-            string += "\\\'";
-        } else {
-            string += content[i];
-        }
-    }
-    return string;
-}
-
+// Costruisco la Queue
 const Q = new Queue();
 
+// per creare il popover con le informazioni in createDiv
 function createGroupItemAction() {
     $(`.list-group-item-action`).hover(function() {
         $(this).addClass('active');
@@ -52,6 +45,9 @@ function createGroupItemAction() {
     })
 }
 
+// funzione per inserire il carousello delle informazioni mobile a fianco della cartina.
+// Questa funzione utilizza la queue per mantenere il numero di elementi laterali costanti, fare
+// riferimento alla classe Queue sopra per altre informazioni
 function createDiv(c) {
     const text = `<a href="${c.link}" class="list-group-item list-group-item-action" aria-current="true" id="action-item">
                     <div class="d-flex w-100 justify-content-between">
@@ -68,6 +64,7 @@ function createDiv(c) {
     createGroupItemAction();
 }
 
+// permette la visione dei popover, utilizzando le funzioni per crearli definite sopra
 function showPopover(c) {
     let pop;
     if (c.divisione == true) {
@@ -119,6 +116,7 @@ function showPopover(c) {
     $(c.id).popover('show');
 }
 
+// funzione per creare popover e distruggerli dopo un lasso di tempo variabile definito sotto
 function createHover(a) {
     $(a.id).hover(
         function() {
@@ -136,213 +134,44 @@ function createHover(a) {
     );
 }
 
+// Class Reg to support json decoding
+class Reg {
+    id;
+    name;
+    linkDonatori;
+    linkAspiranti;
+    info;
+    divisione;
+    regionale;
+    // costruttore a partire da valore json
+    constructor(a) {
+        this.id = a.id;
+        this.name = a.name;
+        this.linkDonatori = a.linkDonatori;
+        this.linkAspiranti = a.linkAspiranti;
+        this.info = a.info;
+        this.divisione = a.divisione ? a.divisione : false;
+        this.regionale = a.regionale ? a.regionale : false;
+    }
+
+}
+let jsonData = [];
+
 function createAllHover() {
-    let idList = {
-        "el1": {
-            "id": "#Rimini",
-            "name": "Rimini",
-            "linkDonatori": "https://fidas.it/dona-ora/",
-            "linkAspiranti": "https://fidas.it/dona-ora/",
-            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale."
-        },
-        "el2": {
-            "id": "#Rimini-ForliCesena",
-            "name": "Rimini Forlì Cesena",
-            "linkDonatori": "https://fidas.it/dona-ora/",
-            "linkAspiranti": "https://fidas.it/dona-ora/",
-            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
-            "divisione": false,
-            "regionale": true
-        },
-        "el3": {
-            "id": "#Ravenna",
-            "name": "Ravenna",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el4": {
-            "id": "#Ferrara",
-            "name": "Ferrara",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el5": {
-            "id": "#Bologna",
-            "name": "Bologna",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el6": {
-            "id": "#Modena",
-            "name": "Modena",
-            "info": "Qualche ciaoooo informazione utile",
-            "link": "https://example.com"
-        },
-        "el7": {
-            "id": "#ReggioEmilia",
-            "name": "Reggio Emilia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el8": {
-            "id": "#Parma",
-            "name": "Parma",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el9": {
-            "id": "#Piacenza",
-            "name": "Piacenza",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el10": {
-            "id": "#Pavia",
-            "name": "Pavia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el11": {
-            "id": "#Milano-Lodi",
-            "name": "Milano e Lodi",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el12": {
-            "id": "#Cremona-Mantova",
-            "name": "Cremona e Mantova",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el13": {
-            "id": "#Brescia",
-            "name": "Brescia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el14": {
-            "id": "#Bergamo",
-            "name": "Bergamo",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el15": {
-            "id": "#Como-Lecco-MonzaBrianza",
-            "name": "Como, Lecco e Monza-Brianza",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el16": {
-            "id": "#Varese",
-            "name": "Varese",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el17": {
-            "id": "#Sondrio",
-            "name": "Sondrio",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el18": {
-            "id": "#Bolzano",
-            "name": "Bolzano",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el19": {
-            "id": "#Trento",
-            "name": "Trento",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el20": {
-            "id": "#Verona",
-            "name": "Verona",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el21": {
-            "id": "#Vicenza",
-            "name": "Vicenza",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
-        },
-        "el22": {
-            "id": "#Padova",
-            "name": "Padova",
-            "info": "Per iscriverti premi qui. ",
-            "linkAspiranti": "https://form.jotform.com/212316458894363",
-            "linkDonatori": "ok"
-        },
-        "el23": {
-            "id": "#Rovigo",
-            "name": "Rovigo",
-            "info": "Per diventare donatore o prenotare la donazione clicca qui",
-            "link": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link"
-        },
-        "el24": {
-            "id": "#Treviso",
-            "name": "Treviso",
-            "info": "Per diventare donatore o prenotare la donazione clicca qui",
-            "link": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link"
-        },
-        "el25": {
-            "id": "#Belluno",
-            "name": "Belluno",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
-            "divisione": true
-        },
-        "el26": {
-            "id": "#Pordenone",
-            "name": "Pordenone",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
-        },
-        "el27": {
-            "id": "#Udine",
-            "name": "Udine",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
-        },
-        "el28": {
-            "id": "#Venezia2",
-            "name": "Venezia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
-        },
-        "el29": {
-            "id": "#Venezia1",
-            "name": "Venezia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
-        },
-        "el30": {
-            "id": "#Venezia3",
-            "name": "Venezia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
-        },
-        "el31": {
-            "id": "#Gorizia2",
-            "name": "Gorizia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
-        },
-        "el32": {
-            "id": "#Gorizia",
-            "name": "Gorizia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
+
+    $.getJSON("http://localhost:5500/data/regioni.json", function(json) {
+        for (let key in json) {
+            jsonData.push(new Reg(json[key]));
         }
-    };
-    for (let key in idList) {
+    });
+    console.log(jsonData);
+    for (let key in jsonData) {
         //console.log(idList[key]);
-        createHover(idList[key]);
+        createHover(key);
     }
 }
 
+// starter function
 $(document).ready(() => {
     //console.log("Document ready");
     // Set map width
