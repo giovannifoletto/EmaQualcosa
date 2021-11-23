@@ -452,16 +452,47 @@ function inizializeInput() {
         }
     });
 }
-
-// funzione per la ricerca
-function eventSubmit(s) {
-    $.each(idList, function(i, v) {
-        if (v.name.search(new RegExp(/peter/i)) != -1) {
-            $(v.id).toggle();
-            return;
+/*
+function findValue(s) {
+    $.each(idList, (e) => {
+        if (e.name === s) {
+            return true;
+        } else {
+            return false;
         }
     });
 }
+
+// funzione per la ricerca
+function eventSubmit(s) {
+
+    if (findValue(s) == true) {
+        const card = ``
+        `<div class="card">
+            <div class="card-body">
+                <h5 class="card-title">${a.name}</h5>
+                <p class="card-text">${a.info}</p>
+                <a href="${a.linkDonatori}" class="btn btn-primary">Clicca qui per prenotare la tua donazione!</a>
+                <a href="${a.linkAspiranti}" class="btn btn-primary">Clicca qui per diventare donatore!</a>
+            </div>
+         </div>`
+        ``;
+        $("#mapContent").html(card);
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#move").offset().top
+        }, 1000);
+    } else {
+        let content = `<div class="card" id="move">
+        <div class="card-body">
+            <p class="card-text">Non Sono state trovate informazioni per la provincia cercata!</p>
+            <p class="card-text">Provare il <a href='https://fidas.it'>sito nazionale</a>.</p>
+     </div>`;
+        $("#mapContent").html(content);
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#move").offset().top
+        }, 1000);
+    }
+}*/
 
 $(document).ready(() => {
     //console.log("Document ready");
