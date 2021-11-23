@@ -119,19 +119,28 @@ function showPopover(c) {
     $(c.id).popover('show');
 }
 
+
+
 function createHover(a) {
+    /*
+        Questa funzione serve a gestire gli eventi quando si passa sopra la provincia
+        - cambiamento di opacità per il colore della regione
+        - funzione popover con timeout ?
+    */
+    var active;
     $(a.id).hover(
         function() {
+            if (a.id != active) {
+                $(active).popover('hide');
+            }
+            active = a.id;
             createDiv(a);
             showPopover(a);
-            $(a.id).css('opacity', '50%');
+            $(this).css('opacity', '50%');
         },
         function() {
-            $(a.id).css("opacity", "100%");
-            setTimeout(function() {
-                $(a.id).popover('hide');
-            }, 1500);
-
+            $(this).css("opacity", "100%");
+            $(a.id).popover('hide');
         }
     );
 }
@@ -343,6 +352,24 @@ function createAllHover() {
     }
 }
 
+function inizializeInput() {
+    var s = "";
+    $("#searchBar").keypress(e => {
+        if (e.which == 13) {
+            eventSubmit(s);
+            s = "";
+            $("#searchBar").val("");
+        } else {
+            s += String.fromCharCode(e.which);
+        }
+    });
+}
+
+// funzione per la ricerca
+function eventSubmit(s) {
+    console.log(s);
+}
+
 $(document).ready(() => {
     //console.log("Document ready");
     // Set map width
@@ -350,6 +377,6 @@ $(document).ready(() => {
     $('#svgMap').width(page);
     $('#svgMap').height(page);
     //console.log("Ciao sto eseguendo da index.js");
-
+    inizializeInput();
     createAllHover();
 });
