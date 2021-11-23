@@ -157,16 +157,17 @@ class Reg {
 let jsonData = [];
 
 function createAllHover() {
-
     $.getJSON("http://localhost:5500/data/regioni.json", function(json) {
         for (let key in json) {
-            jsonData.push(new Reg(json[key]));
+            //jsonData.push(new Reg(json[key]));
+            jsonData.push(json[key]);
         }
     });
-    // console.log(jsonData);
-    for (let k in jsonData) {
-        console.log($(this)[0]);
-        createHover($(this)[0]);
+
+    const iterator = jsonData.values();
+
+    for (let value of iterator) {
+        console.log(value);
     }
 }
 
