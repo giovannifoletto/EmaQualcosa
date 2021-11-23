@@ -301,7 +301,7 @@ function createAllHover() {
         "el19": {
             "id": "#Trento",
             "name": "Trento",
-            "info": "Informazioni per la zona del Primiero e chi si appoggia a Feltre come ospedale",
+            "info": "Informazioni per la zona del Primiero e per chi usufruisce dell'ospedale di Feltre",
             "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
             "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx"
         },
