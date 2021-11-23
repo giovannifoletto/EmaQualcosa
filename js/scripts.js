@@ -157,154 +157,213 @@ function createAllHover() {
         "el3": {
             "id": "#Ravenna",
             "name": "Ravenna",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el4": {
             "id": "#Ferrara",
             "name": "Ferrara",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el5": {
             "id": "#Bologna",
             "name": "Bologna",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el6": {
             "id": "#Modena",
             "name": "Modena",
-            "info": "Qualche ciaoooo informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el7": {
             "id": "#ReggioEmilia",
             "name": "Reggio Emilia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el8": {
             "id": "#Parma",
             "name": "Parma",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el9": {
             "id": "#Piacenza",
             "name": "Piacenza",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el10": {
             "id": "#Pavia",
             "name": "Pavia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el11": {
             "id": "#Milano-Lodi",
             "name": "Milano e Lodi",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el12": {
             "id": "#Cremona-Mantova",
             "name": "Cremona e Mantova",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el13": {
             "id": "#Brescia",
             "name": "Brescia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el14": {
             "id": "#Bergamo",
             "name": "Bergamo",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el15": {
             "id": "#Como-Lecco-MonzaBrianza",
             "name": "Como, Lecco e Monza-Brianza",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el16": {
             "id": "#Varese",
             "name": "Varese",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el17": {
             "id": "#Sondrio",
             "name": "Sondrio",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el18": {
             "id": "#Bolzano",
             "name": "Bolzano",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el19": {
             "id": "#Trento",
             "name": "Trento",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "info": "Informazioni per la zona del Primiero e chi si appoggia a Feltre come ospedale",
+            "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
+            "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx"
         },
         "el20": {
             "id": "#Verona",
             "name": "Verona",
             "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkAspiranti": "fidasverona.it/it/vorrei-diventare-donatore",
+	    "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione"
         },
         "el21": {
             "id": "#Vicenza",
             "name": "Vicenza",
             "info": "Qualche informazione utile",
-            "link": "https://example.com"
+            "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeN5Po_FS4or8FfKS2u-mjCZAbRu1TEz-tBEtvceLJUkj3nWQ/viewform",
+	    "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione"
         },
         "el22": {
             "id": "#Padova",
             "name": "Padova",
             "info": "Per iscriverti premi qui. ",
             "linkAspiranti": "https://form.jotform.com/212316458894363",
-            "linkDonatori": "ok"
+            "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link"
         },
         "el23": {
             "id": "#Rovigo",
             "name": "Rovigo",
             "info": "Per diventare donatore o prenotare la donazione clicca qui",
-            "link": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link"
+            "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
+	    "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link"
         },
         "el24": {
             "id": "#Treviso",
             "name": "Treviso",
             "info": "Per diventare donatore o prenotare la donazione clicca qui",
-            "link": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link"
+	    "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
+	    "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link"
         },
         "el25": {
             "id": "#Belluno",
             "name": "Belluno",
-            "info": "Qualche informazione utile",
+            "info": "Per diventare donatore o prenotare la donazione clicca qui",
             "link": "https://example.com",
             "divisione": true
         },
         "el26": {
             "id": "#Pordenone",
             "name": "Pordenone",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el27": {
             "id": "#Udine",
             "name": "Udine",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el28": {
             "id": "#Venezia2",
@@ -327,14 +386,20 @@ function createAllHover() {
         "el31": {
             "id": "#Gorizia2",
             "name": "Gorizia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         },
         "el32": {
             "id": "#Gorizia",
             "name": "Gorizia",
-            "info": "Qualche informazione utile",
-            "link": "https://example.com",
+            "linkDonatori": "https://fidas.it/dona-ora/",
+            "linkAspiranti": "https://fidas.it/dona-ora/",
+            "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+            "divisione": false,
+            "regionale": true
         }
     };
     for (let key in idList) {
