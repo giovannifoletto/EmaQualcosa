@@ -5,13 +5,13 @@
 
 - [ ] sorta di documentazione o qualche commento, oppure la prossima volta non capisco più nulla del funzionemento
 - [ ] "se manca la tua provincia clicca qui!" => da aggiungere
-- [ ] Refactor index.html-start.html, infatti la index.html deve essere l'attuale start.html
+- [x] Refactor index.html-start.html, infatti la index.html deve essere l'attuale start.html
 
 ## TO DO BEFORE ONLINE
-- [ ] check names and spelling
+- [x] check names and spelling
 - [ ] check compatibility thought mobile phones
-- [ ] update site name and content
-- [ ] update copiryght site name 
+- [-] update site name and content
+- [x] update copiryght site name 
 - [ ] update mailto footer and google contacts
 
 ## Spiegazione:
