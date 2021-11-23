@@ -165,7 +165,7 @@ let idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
         "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
-	"divisione": true
+        "divisione": true
     },
     "el20": {
         "id": "#Verona",
@@ -173,7 +173,7 @@ let idList = {
         "info": "",
         "linkAspiranti": "fidasverona.it/it/vorrei-diventare-donatore",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
-	"divisione": true
+        "divisione": true
     },
     "el21": {
         "id": "#Vicenza",
@@ -181,7 +181,7 @@ let idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeN5Po_FS4or8FfKS2u-mjCZAbRu1TEz-tBEtvceLJUkj3nWQ/viewform",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
-	"divisione": true
+        "divisione": true
     },
     "el22": {
         "id": "#Padova",
@@ -189,7 +189,7 @@ let idList = {
         "info": "",
         "linkAspiranti": "https://form.jotform.com/212316458894363",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link",
-	"divisione": true
+        "divisione": true
     },
     "el23": {
         "id": "#Rovigo",
@@ -197,7 +197,7 @@ let idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
-	"divisione": true
+        "divisione": true
     },
     "el24": {
         "id": "#Treviso",
@@ -205,7 +205,7 @@ let idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
-	"divisione": true
+        "divisione": true
     },
     "el25": {
         "id": "#Belluno",
@@ -238,21 +238,21 @@ let idList = {
     "el28": {
         "id": "#Venezia2",
         "name": "Venezia",
-        "info": "Per diventare donatore o prenotare la donazione clicca qui.",
+        "info": "",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
     },
     "el29": {
         "id": "#Venezia1",
         "name": "Venezia",
-        "info": "Per diventare donatore o prenotare la donazione clicca qui.",
+        "info": "",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
     },
     "el30": {
         "id": "#Venezia3",
         "name": "Venezia",
-        "info": "Per diventare donatore o prenotare la donazione clicca qui.",
+        "info": "",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
     },
