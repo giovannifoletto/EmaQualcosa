@@ -214,7 +214,6 @@ let idList = {
         "linkAspirantiFeltre": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
         "linkAspirantiBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "linkDonatoriFeltre": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
-        "linkDonatoriBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "divisione": true
     },
     "el26": {
