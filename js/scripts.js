@@ -170,7 +170,7 @@ let idList = {
     "el20": {
         "id": "#Verona",
         "name": "Verona",
-        "info": "",
+        "info": "Una volta compilato il modulo verrai ricontattato via mail",
         "linkAspiranti": "fidasverona.it/it/vorrei-diventare-donatore",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
         "divisione": true
