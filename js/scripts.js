@@ -1,20 +1,7 @@
 import { idList } from './header.js';
 
-function createContent(a) {
-    const card = ``
-    `<div class="card">
-        <div class="card-body">
-            <h5 class="card-title">${a.name}</h5>
-            <p class="card-text">${a.info}</p>
-            <a href="${a.linkDonatori}" class="btn btn-primary">Clicca qui per prenotare la tua donazione!</a>
-            <a href="${a.linkAspiranti}" class="btn btn-primary">Clicca qui per diventare donatore!</a>
-        </div>
-     </div>`
-    ``;
-    $("#mapContent").html(card);
-}
-
-function showPopover(c) {
+// generate content of the pop over
+function generateContent(c) {
     let pop;
     if (c.divisione == true) { // BELLUNO to DO
         pop = `<div class="card" id="cards">
@@ -79,6 +66,44 @@ function showPopover(c) {
             </div>`;
         }
     }
+    return pop;
+}
+
+// generate the content of the Information's Div
+function divCreate(a) {
+    let content = ``;
+    if (a.divisione != true) {
+        content = `<div class="card" id="move">
+        <div class="card-body">
+            <h5 class="card-title">${a.name}</h5>
+            <p class="card-text">${a.info}</p>
+            <div class="container text-center">
+                    <a href="${a.linkDonatori}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione!</a>
+                    <a href="${a.linkAspiranti}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore!</a>
+                </div>
+            </div>
+        </div>
+     </div>`;
+    } else {
+        content = `<div class="card" id="move">
+    <div class="card-body">
+        <h5 class="card-title">${a.name}</h5>
+        <p class="card-text">${a.info}</p>
+        <div class="container text-center">
+                <a href="${a.linkDonatoriFelte}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Feltre!</a>
+                <a href="${a.linkAspirantiFeltre}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Feltre!</a>
+                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Belluno!</a>
+                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Belluno!</a>
+            </div>
+        </div>
+    </div>
+ </div>`;
+    }
+    return content;
+}
+
+function showPopover(c) {
+    let pop = generateContent(c);
     $(c.id).popover({
         html: true,
         title: "",
@@ -113,34 +138,8 @@ function createHover(a) {
 }
 
 function createClick(a) {
-    let content = "";
-    if (a.divisione != true) {
-        content = `<div class="card" id="move">
-        <div class="card-body">
-            <h5 class="card-title">${a.name}</h5>
-            <p class="card-text">${a.info}</p>
-            <div class="container text-center">
-                    <a href="${a.linkDonatori}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione!</a>
-                    <a href="${a.linkAspiranti}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore!</a>
-                </div>
-            </div>
-        </div>
-     </div>`;
-    } else {
-        content = `<div class="card" id="move">
-    <div class="card-body">
-        <h5 class="card-title">${a.name}</h5>
-        <p class="card-text">${a.info}</p>
-        <div class="container text-center">
-                <a href="${a.linkDonatoriFelte}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Feltre!</a>
-                <a href="${a.linkAspirantiFeltre}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Feltre!</a>
-                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Belluno!</a>
-                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Belluno!</a>
-            </div>
-        </div>
-    </div>
- </div>`;
-    }
+    let content = divCreate(a);
+
     $(a.id).click(function() {
         $("#mapContent").html(content);
         $([document.documentElement, document.body]).animate({
@@ -163,7 +162,7 @@ function inizializeInput() {
     var s = "";
     $("#searchBar").keypress(e => {
         if (e.which == 13) {
-            eventSubmit(s);
+            findValue(s);
             s = "";
             $("#searchBar").val("");
         } else {
@@ -171,47 +170,34 @@ function inizializeInput() {
         }
     });
 }
-/*
+
+// funzione di Ricerca collegata all'evento submit della barra di ricerca
 function findValue(s) {
-    $.each(idList, (e) => {
-        if (e.name === s) {
+    for (let k in idList) {
+        if ((idList[k]["name"]).toLowerCase() == s.toLowerCase()) {
+            // console.log((idList[k]["name"]).toLowerCase());
+            // console.log(s.toLowerCase());
+            // obj["obj"] = idList[k];
+            const card = divCreate(idList[k]);
+            $("#mapContent").html(card);
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#move").offset().top
+            }, 1000);
             return true;
         } else {
-            return false;
+            let content = `<div class="card" id="move">
+           <div class="card-body">
+               <p class="card-text">Non Sono state trovate informazioni per la provincia cercata!</p>
+               <p class="card-text">Provare il <a href='https://fidas.it'>sito nazionale</a>.</p>
+        </div>`;
+            $("#mapContent").html(content);
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#move").offset().top
+            }, 1000);
         }
-    });
-}
-
-// funzione per la ricerca
-function eventSubmit(s) {
-
-    if (findValue(s) == true) {
-        const card = ``
-        `<div class="card">
-            <div class="card-body">
-                <h5 class="card-title">${a.name}</h5>
-                <p class="card-text">${a.info}</p>
-                <a href="${a.linkDonatori}" class="btn btn-primary">Clicca qui per prenotare la tua donazione!</a>
-                <a href="${a.linkAspiranti}" class="btn btn-primary">Clicca qui per diventare donatore!</a>
-            </div>
-         </div>`
-        ``;
-        $("#mapContent").html(card);
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#move").offset().top
-        }, 1000);
-    } else {
-        let content = `<div class="card" id="move">
-        <div class="card-body">
-            <p class="card-text">Non Sono state trovate informazioni per la provincia cercata!</p>
-            <p class="card-text">Provare il <a href='https://fidas.it'>sito nazionale</a>.</p>
-     </div>`;
-        $("#mapContent").html(content);
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#move").offset().top
-        }, 1000);
     }
-}*/
+    return false;
+}
 
 $(document).ready(() => {
     //console.log("Document ready");
