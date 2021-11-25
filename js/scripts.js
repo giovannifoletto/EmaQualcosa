@@ -3,7 +3,7 @@ import { idList } from './header.js';
 // generate content of the pop over
 function generateContent(c) {
     let pop;
-    if (c.divisione == true) { // BELLUNO to DO
+    if (c.divisione == true) {
         pop = `<div class="card" id="cards">
         <div class="card-body">
         <h5 class="card-title">${c.name}</h5>

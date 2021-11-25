@@ -165,7 +165,8 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
         "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
-        "divisione": true
+        "divisione": false,
+        "regionale": true
     },
     "el20": {
         "id": "#Verona",
@@ -173,7 +174,7 @@ export const idList = {
         "info": "Una volta compilato il modulo verrai ricontattato via mail",
         "linkAspiranti": "fidasverona.it/it/vorrei-diventare-donatore",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
-        "divisione": true
+        "divisione": false
     },
     "el21": {
         "id": "#Vicenza",
@@ -181,7 +182,7 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeN5Po_FS4or8FfKS2u-mjCZAbRu1TEz-tBEtvceLJUkj3nWQ/viewform",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
-        "divisione": true
+        "divisione": false
     },
     "el22": {
         "id": "#Padova",
@@ -189,7 +190,7 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://form.jotform.com/212316458894363",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link",
-        "divisione": true
+        "divisione": false
     },
     "el23": {
         "id": "#Rovigo",
@@ -197,7 +198,7 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
-        "divisione": true
+        "divisione": false
     },
     "el24": {
         "id": "#Treviso",
@@ -205,7 +206,7 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
-        "divisione": true
+        "divisione": false
     },
     "el25": {
         "id": "#Belluno",
@@ -214,7 +215,7 @@ export const idList = {
         "linkAspirantiFeltre": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
         "linkAspirantiBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "linkDonatoriFeltre": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
-	"linkDonatoriBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
+        "linkDonatoriBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "divisione": true
     },
     "el26": {
