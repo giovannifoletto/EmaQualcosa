@@ -172,7 +172,7 @@ export const idList = {
         "id": "#Verona",
         "name": "Verona",
         "info": "Una volta compilato il modulo verrai ricontattato via mail",
-        "linkAspiranti": "fidasverona.it/it/vorrei-diventare-donatore",
+        "linkAspiranti": "https://www.fidasverona.it/it/vorrei-diventare-donatore",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
         "divisione": false
     },
@@ -216,7 +216,8 @@ export const idList = {
         "linkAspirantiBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "linkDonatoriFeltre": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
         "linkDonatoriBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
-        "divisione": true
+        "divisione": true,
+        "regionale": true
     },
     "el26": {
         "id": "#Pordenone",
