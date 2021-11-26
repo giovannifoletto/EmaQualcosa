@@ -1,23 +1,22 @@
 "use strict";
 exports.__esModule = true;
 exports.idList = exports.returnValue = exports.Queue = void 0;
-var Queue = /** @class */ (function () {
+var Queue = /** @class */ (function() {
     function Queue() {
         this.list = [];
         this.index = 0;
     }
-    Queue.prototype.updateQueue = function () {
+    Queue.prototype.updateQueue = function() {
         var c = "";
         for (var i = 0; i < this.index; ++i) {
             c += this.list[i];
         }
         return c;
     };
-    Queue.prototype.push = function (a) {
-        if (typeof (a) != typeof (" ")) {
+    Queue.prototype.push = function(a) {
+        if (typeof(a) != typeof(" ")) {
             throw "Push error, no string given";
-        }
-        else {
+        } else {
             this.list.unshift(a);
             this.index++;
             if (this.index > Queue.MAX_VALUE) {
@@ -32,15 +31,14 @@ var Queue = /** @class */ (function () {
     return Queue;
 }());
 exports.Queue = Queue;
+
 function returnValue(c) {
     if (c.divisione == true) { // modulo per belluno
         return "<div class=\"card\" id=\"cards\">\n        <div class=\"card-body\">\n        <h5 class=\"card-title\">".concat(c.name, "</h5>\n        <!-- <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6> -->\n        <p class=\"card-text\">").concat(c.info, "</p>\n        </div>\n        </div>\n        <div>\n            <ul class=\"list-group\">\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkAspiranti, "\" class=\"card-link\">Clicca per diventare Donatore!</a>\n                </li>\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkDonatori, "\" class=\"card-link\">Clicca per prenotare la donazione!</a>\n                </li>\n            </ul>\n        </div>");
-    }
-    else {
+    } else {
         if (c.regionale == true) { // modulo regionale
             return "<div class=\"card\" id=\"cards\">\n        <div class=\"card-body\">\n        <h5 class=\"card-title\">".concat(c.name, "</h5>\n        <p class=\"card-text\">").concat(c.info, "</p>\n        </div>\n        </div>\n        <div>\n            <ul class=\"list-group\">\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkAspiranti, "\" class=\"card-link\">Clicca per diventare Donatore!</a>\n                </li>\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkDonatori, "\" class=\"card-link\">Clicca per prenotare la donazione!</a>\n                </li>\n            </ul>\n        </div>");
-        }
-        else { // modulo nazionale
+        } else { // modulo nazionale
             return "<div class=\"card\" id=\"cards\">\n            <div class=\"card-body\">\n            <h5 class=\"card-title\">".concat(c.name, "</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">Modulo Nazionale</h6>\n            <p class=\"card-text\">").concat(c.info, "</p>\n            </div>\n            </div>\n            <div>\n                <ul class=\"list-group\">\n                    <li class=\"list-group-item\">\n                        <a href=\"").concat(c.linkAspiranti, "\" class=\"card-link\">Clicca per diventare Donatore!</a>\n                    </li>\n                    <li class=\"list-group-item\">\n                        <a href=\"").concat(c.linkDonatori, "\" class=\"card-link\">Clicca per prenotare la donazione!</a>\n                    </li>\n                </ul>\n            </div>");
         }
     }
@@ -211,51 +209,65 @@ exports.idList = {
     "el19": {
         "id": "#Trento",
         "name": "Trento",
-        "info": "Informazioni per la zona del Primiero e per chi usufruisce dell'ospedale di Feltre",
+        "info": "Informazioni per la zona del Primiero e per chi usufruisce dell'ospedale a Feltre.",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
         "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx"
     },
     "el20": {
         "id": "#Verona",
         "name": "Verona",
-        "info": "Qualche informazione utile",
-        "linkAspiranti": "fidasverona.it/it/vorrei-diventare-donatore",
-        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione"
+        "info": "Una volta compilato il modulo verrai ricontattato via mail",
+        "linkAspiranti": "https://www.fidasverona.it/it/vorrei-diventare-donatore",
+        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
+        "divisione": false,
+        "regionale": true
     },
     "el21": {
         "id": "#Vicenza",
         "name": "Vicenza",
         "info": "Qualche informazione utile",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeN5Po_FS4or8FfKS2u-mjCZAbRu1TEz-tBEtvceLJUkj3nWQ/viewform",
-        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione"
+        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
+        "divisione": false,
+        "regionale": true
     },
     "el22": {
         "id": "#Padova",
         "name": "Padova",
         "info": "Per iscriverti premi qui. ",
         "linkAspiranti": "https://form.jotform.com/212316458894363",
-        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link"
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el23": {
         "id": "#Rovigo",
         "name": "Rovigo",
         "info": "Per diventare donatore o prenotare la donazione clicca qui",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
-        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link"
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el24": {
         "id": "#Treviso",
         "name": "Treviso",
         "info": "Per diventare donatore o prenotare la donazione clicca qui",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
-        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link"
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el25": {
         "id": "#Belluno",
         "name": "Belluno",
-        "info": "Per diventare donatore o prenotare la donazione clicca qui",
-        "link": "https://example.com",
-        "divisione": true
+        "info": "",
+        "linkAspirantiFeltre": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
+        "linkAspirantiBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
+        "linkDonatoriFeltre": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
+        "linkDonatoriBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
+        "divisione": true,
+        "regionale": true
     },
     "el26": {
         "id": "#Pordenone",
@@ -278,20 +290,29 @@ exports.idList = {
     "el28": {
         "id": "#Venezia2",
         "name": "Venezia",
-        "info": "Qualche informazione utile",
-        "link": "https://example.com"
+        "info": "",
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el29": {
         "id": "#Venezia1",
         "name": "Venezia",
-        "info": "Qualche informazione utile",
-        "link": "https://example.com"
+        "info": "",
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el30": {
         "id": "#Venezia3",
         "name": "Venezia",
-        "info": "Qualche informazione utile",
-        "link": "https://example.com"
+        "info": "",
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el31": {
         "id": "#Gorizia2",
