@@ -162,7 +162,7 @@ export const idList = {
     "el19": {
         "id": "#Trento",
         "name": "Trento",
-        "info": "",
+        "info": "Informazioni per la zona del Primiero e per chi usufruisce dell'ospedale a Feltre.",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
         "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
         "divisione": false,
@@ -174,7 +174,8 @@ export const idList = {
         "info": "Una volta compilato il modulo verrai ricontattato via mail",
         "linkAspiranti": "https://www.fidasverona.it/it/vorrei-diventare-donatore",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
-        "divisione": false
+        "divisione": false,
+        "regionale": true
     },
     "el21": {
         "id": "#Vicenza",
@@ -182,7 +183,8 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeN5Po_FS4or8FfKS2u-mjCZAbRu1TEz-tBEtvceLJUkj3nWQ/viewform",
         "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
-        "divisione": false
+        "divisione": false,
+        "regionale": true
     },
     "el22": {
         "id": "#Padova",
@@ -190,7 +192,8 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://form.jotform.com/212316458894363",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link",
-        "divisione": false
+        "divisione": false,
+        "regionale": true
     },
     "el23": {
         "id": "#Rovigo",
@@ -198,7 +201,8 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
-        "divisione": false
+        "divisione": false,
+        "regionale": true
     },
     "el24": {
         "id": "#Treviso",
@@ -206,7 +210,8 @@ export const idList = {
         "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
-        "divisione": false
+        "divisione": false,
+        "regionale": true
     },
     "el25": {
         "id": "#Belluno",
@@ -242,21 +247,27 @@ export const idList = {
         "name": "Venezia",
         "info": "",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
-        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el29": {
         "id": "#Venezia1",
         "name": "Venezia",
         "info": "",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
-        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el30": {
         "id": "#Venezia3",
         "name": "Venezia",
         "info": "",
         "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
-        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "divisione": false,
+        "regionale": true
     },
     "el31": {
         "id": "#Gorizia2",
