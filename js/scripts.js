@@ -1,74 +1,32 @@
-class Queue {
-    /*
-    Classe per implementare una coda, necessaria per lo scorrere lineare del carousello delle informazioni.
-    Implementazione di base con solo i metodi necessari.
-    MAX_VALUE indica il massimo valore di elementi nel carousello laterale.
-    */
-    constructor() {
-        this.list = [];
-        this.index = 0;
-        // per modificare il numero di elementi nel carousello laterale modificare questa variabile
-        const MAX_VALUE = 6;
-    }
+import { idList } from './header.js';
 
-    updateQueue() {
-        let c = "";
-        for (let i = 0; i < this.index; ++i) {
-            c += this.list[i];
-        }
-        return c;
-    }
-    push(a) {
-        if (typeof(a) != typeof(" ")) {
-            throw "Push error, no string given";
-        } else {
-            this.list.unshift(a);
-            this.index++;
-            if (this.index > MAX_VALUE) {
-                this.list.pop();
-                this.index--;
-            }
-            return "";
-        }
-    }
-}
-
-// Costruisco la Queue
-const Q = new Queue();
-
-// per creare il popover con le informazioni in createDiv
-function createGroupItemAction() {
-    $(`.list-group-item-action`).hover(function() {
-        $(this).addClass('active');
-    }, function() {
-        $(this).removeClass('active');
-    })
-}
-
-// funzione per inserire il carousello delle informazioni mobile a fianco della cartina.
-// Questa funzione utilizza la queue per mantenere il numero di elementi laterali costanti, fare
-// riferimento alla classe Queue sopra per altre informazioni
-function createDiv(c) {
-    const text = `<a href="${c.link}" class="list-group-item list-group-item-action" aria-current="true" id="action-item">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">${c.name}</h5>
-                    </div>
-                    <p class="mb-1">${c.info}</p>
-                    <small>Click here to see the informations for this site!</small>
-                  </a>`;
-
-    Q.push(text);
-
-    $('#content').html("");
-    $('#list-group').html(Q.updateQueue());
-    createGroupItemAction();
-}
-
-// permette la visione dei popover, utilizzando le funzioni per crearli definite sopra
-function showPopover(c) {
+// generate content of the pop over
+function generateContent(c) {
     let pop;
     if (c.divisione == true) {
-        pop = "diviso";
+        pop = `<div class="card" id="cards">
+        <div class="card-body">
+        <h5 class="card-title">${c.name}</h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <p class="card-text">${c.info}</p>
+        </div>
+        </div>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="${c.linkAspirantiFeltre}" class="card-link">Clicca per diventare Donatore a Feltre!</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="${c.linkDonatoriFeltre}" class="card-link">Clicca per prenotare la donazione a Feltre!</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="${c.linkAspirantiBelluno}" class="card-link">Clicca per diventare Donatore a Belluno!</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="${c.linkDonatoriBelluno}" class="card-link">Clicca per prenotare la donazione a Belluno!</a>
+                </li>
+            </ul>
+        </div>`;
     } else {
         if (c.regionale == true) {
             pop = `<div class="card" id="cards">
@@ -108,6 +66,44 @@ function showPopover(c) {
             </div>`;
         }
     }
+    return pop;
+}
+
+// generate the content of the Information's Div
+function divCreate(a) {
+    let content = ``;
+    if (a.divisione != true) {
+        content = `<div class="card" id="move">
+        <div class="card-body">
+            <h5 class="card-title">${a.name}</h5>
+            <p class="card-text">${a.info}</p>
+            <div class="container text-center">
+                    <a href="${a.linkDonatori}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione!</a>
+                    <a href="${a.linkAspiranti}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore!</a>
+                </div>
+            </div>
+        </div>
+     </div>`;
+    } else {
+        content = `<div class="card" id="move">
+    <div class="card-body">
+        <h5 class="card-title">${a.name}</h5>
+        <p class="card-text">${a.info}</p>
+        <div class="container text-center">
+                <a href="${a.linkDonatoriFelte}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Feltre!</a>
+                <a href="${a.linkAspirantiFeltre}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Feltre!</a>
+                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per prenotare la tua donazione a Belluno!</a>
+                <a href="${a.linkDonatoriBelluno}" class="btn btn-primary" style="margin:1px">Clicca qui per diventare donatore a Belluno!</a>
+            </div>
+        </div>
+    </div>
+ </div>`;
+    }
+    return content;
+}
+
+function showPopover(c) {
+    let pop = generateContent(c);
     $(c.id).popover({
         html: true,
         title: "",
@@ -116,62 +112,93 @@ function showPopover(c) {
     $(c.id).popover('show');
 }
 
-// funzione per creare popover e distruggerli dopo un lasso di tempo variabile definito sotto
 function createHover(a) {
+    /*
+        Questa funzione serve a gestire gli eventi quando si passa sopra la provincia
+        - cambiamento di opacità per il colore della regione
+        - funzione popover con timeout ?
+    */
+    var active;
     $(a.id).hover(
         function() {
-            createDiv(a);
+            if (a.id != active) {
+                $(active).popover('hide');
+            }
+            active = a.id;
             showPopover(a);
-            $(a.id).css('opacity', '50%');
+            $(this).css('opacity', '50%');
         },
         function() {
-            $(a.id).css("opacity", "100%");
-            setTimeout(function() {
+            $(this).css("opacity", "100%");
+            if (active == a.id) {
                 $(a.id).popover('hide');
-            }, 1500);
-
+            }
         }
     );
 }
 
-// Class Reg to support json decoding
-class Reg {
-    id;
-    name;
-    linkDonatori;
-    linkAspiranti;
-    info;
-    divisione;
-    regionale;
-    // costruttore a partire da valore json
-    constructor(a) {
-        this.id = a.id;
-        this.name = a.name;
-        this.linkDonatori = a.linkDonatori;
-        this.linkAspiranti = a.linkAspiranti;
-        this.info = a.info;
-        this.divisione = a.divisione ? a.divisione : false;
-        this.regionale = a.regionale ? a.regionale : false;
-    }
+function createClick(a) {
+    let content = divCreate(a);
 
+    $(a.id).click(function() {
+        $("#mapContent").html(content);
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#move").offset().top
+        }, 1000);
+    });
 }
-let jsonData = [];
 
+// insert event handler for HOVERING in the maps regions
+// inserti event handler for CLICK on map region
 function createAllHover() {
+    for (let key in idList) {
+        //console.log(idList[key]);
+        createHover(idList[key]);
+        createClick(idList[key]);
+    }
+}
 
-    $.getJSON("http://localhost:5500/data/regioni.json", function(json) {
-        for (let key in json) {
-            jsonData.push(new Reg(json[key]));
+function inizializeInput() {
+    var s = "";
+    $("#searchBar").keypress(e => {
+        if (e.which == 13) {
+            findValue(s);
+            s = "";
+            $("#searchBar").val("");
+        } else {
+            s += String.fromCharCode(e.which);
         }
     });
-    console.log(jsonData);
-    for (let key in jsonData) {
-        //console.log(idList[key]);
-        createHover(key);
-    }
 }
 
-// starter function
+// funzione di Ricerca collegata all'evento submit della barra di ricerca
+function findValue(s) {
+    for (let k in idList) {
+        if ((idList[k]["name"]).toLowerCase() == s.toLowerCase()) {
+            // console.log((idList[k]["name"]).toLowerCase());
+            // console.log(s.toLowerCase());
+            // obj["obj"] = idList[k];
+            const card = divCreate(idList[k]);
+            $("#mapContent").html(card);
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#move").offset().top
+            }, 1000);
+            return true;
+        } else {
+            let content = `<div class="card" id="move">
+           <div class="card-body">
+               <p class="card-text">Non Sono state trovate informazioni per la provincia cercata!</p>
+               <p class="card-text">Provare il <a href='https://fidas.it'>sito nazionale</a>.</p>
+        </div>`;
+            $("#mapContent").html(content);
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#move").offset().top
+            }, 1000);
+        }
+    }
+    return false;
+}
+
 $(document).ready(() => {
     //console.log("Document ready");
     // Set map width
@@ -179,6 +206,6 @@ $(document).ready(() => {
     $('#svgMap').width(page);
     $('#svgMap').height(page);
     //console.log("Ciao sto eseguendo da index.js");
-
+    inizializeInput();
     createAllHover();
 });

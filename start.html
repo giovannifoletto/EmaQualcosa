@@ -26,8 +26,6 @@
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
     <!-- NAVBAR -->
     <div class="container">
 
@@ -42,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="/about.html">Chi Siamo</a>
@@ -54,12 +52,28 @@
             </div>
         </nav>
     </div>
+    <br>
+    <div class="container">
+        <div>
+            <h3 class="text-center">Clicca
+                <!--o cerca-->la tua provincia per iniziare!</h3>
+            <h3 class="text-center">Per le altre zone d'Italia <a href="https://fidas.it/dona-ora/">clicca qui</a>!</h3>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Cerca la tua provincia</span>
+            </div>
+            <input id="searchBar" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="row justify-content-md-center ">
             <div class="col-md">
                 <div id="map" class="flex">
-                    <svg width="" height="" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg" id="svgMap">
+                    <svg viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg" id="svgMap">
                         <g id="Italy_map_with_provinces 1 1">
                         <g id="path">
                         <path id="path5569" d="M278.63 287.625C278.182 287.625 280.241 289.89 280.374 290.022C281.081 290.73 281.618 290.859 281.899 291.983C282.054 292.604 281.681 294.086 281.681 295.035C281.681 296.587 281.334 296.6 280.81 297.65C280.183 298.903 280.807 299.175 279.066 299.175C277.977 299.175 276.887 299.175 275.797 299.175C274.266 299.175 274.034 298.482 273.618 297.65C273.234 296.882 273.307 295.721 272.964 295.035C272.556 294.219 272.523 293.269 272.31 292.419C272.112 291.626 271.382 291.098 270.567 290.894C269.173 290.545 268.619 291.056 268.387 291.983C268.133 293 267.883 293.646 267.516 294.381C267.082 295.249 266.764 295.884 266.426 296.56C266.027 297.358 264.925 297.794 264.247 298.304C263.45 298.901 263.372 299.067 262.067 299.393C261.115 299.631 260.061 299.622 259.234 299.829C258.027 300.131 257.081 299.618 256.183 299.393C255.232 299.155 254.724 298.663 254.004 298.304C253.081 297.842 252.315 297.881 251.389 297.65C250.357 297.392 250.037 298.697 249.863 299.393C249.717 299.977 249.149 300.289 248.991 300.919" stroke="black"/>
@@ -146,15 +160,10 @@
 
                 </div>
             </div>
-            <div class="col-md">
-                <h4 class="p5" id='content'>Clicca su un posto colorato della mappa per vedere le informazioni!</h4>
-                <div class="list-group" id="list-group">
-
-                </div>
+            <div class="col-md" id="mapContent">
             </div>
         </div>
     </div>
-
 
 
     <footer class="footer-16371">
@@ -165,41 +174,35 @@
                         <a href="#">Donatori Sangue Triveneto</a>
                     </div>
                     <ul class="list-unstyled nav-links mb-5">
-                        <li><a href="#">About</a></li>
-                        <li><a href="/about.html#contattaci">FAQ</a></li>
-                        <li><a href="/about.html">Contact</a></li>
+                        <li><a href="https://fidas.it/">About</a></li>
+                        <li><a href="https://fidas.it/perche-donare-sangue/">FAQ</a></li>
                     </ul>
                     <div class="social mb-4">
                         <h3>Contact us</h3>
                         <ul class="list-unstyled">
-                            <!-- TO BE CHANGED-->
-                            <li class="in"><a href=""><i class="bi bi-github"></i></a></li>
-                            <li class="fb"><a href="mailto:giovanni.foletto@gmail.com"><i class="bi bi-envelope"></i></a></li>
-                            <li class="tw"><a href="giovanni.foletto@gmail.com"><i class="bi bi-google"></i></a></li>
+                            <li class="fb"><a href="mailto:fidas@fidas.it"><i class="bi bi-envelope"></i></a></li>
+                            <li class="tw"><a href="https://fidas.it/"><i class="bi bi-google"></i></a></li>
                         </ul>
                     </div>
                     <div class="social mb-4">
-                        <h3>Created by giovannifoletto</h3>
+                        <h3>Created by Giovanni Foletto, opensource</h3>
                         <ul class="list-unstyled">
                             <li class="in"><a href="https://github.com/giovannifoletto"><i class="bi bi-github"></i></a></li>
-                            <li class="fb"><a href="mailto:giovanni.foletto@gmail.com"><i class="bi bi-envelope"></i></a></li>
-                            <li class="tw"><a href="giovanni.foletto@gmail.com"><i class="bi bi-google"></i></a></li>
                         </ul>
                     </div>
                     <div class="copyright">
-                        <p class="mb-0"><small>&copy; DonatoriSangueTriveneto. All Rights Reserved.</small></p>
+                        <p class="mb-0"><small>&copy; giovanidonatori.fidasfeltre.it. All Rights Reserved.</small></p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-
-
-
-    <script src="./js/script.js"></script>
-    <script src="./js/activeListeners.js"></script>
-    <script src="./js/header.js"></script>
-
+    <!-- Bootstrap jquery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="module" src="/js/header.js"></script>
+    <script type="module" src="/js/scripts.js"></script>
 </body>
 
 </html>

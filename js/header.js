@@ -1,66 +1,17 @@
-"use strict";
-exports.__esModule = true;
-exports.idList = exports.returnValue = exports.Queue = void 0;
-var Queue = /** @class */ (function () {
-    function Queue() {
-        this.list = [];
-        this.index = 0;
-    }
-    Queue.prototype.updateQueue = function () {
-        var c = "";
-        for (var i = 0; i < this.index; ++i) {
-            c += this.list[i];
-        }
-        return c;
-    };
-    Queue.prototype.push = function (a) {
-        if (typeof (a) != typeof (" ")) {
-            throw "Push error, no string given";
-        }
-        else {
-            this.list.unshift(a);
-            this.index++;
-            if (this.index > Queue.MAX_VALUE) {
-                this.list.pop();
-                this.index--;
-            }
-            return "";
-        }
-    };
-    // per modificare il numero di elementi nel carousello laterale modificare questa variabile
-    Queue.MAX_VALUE = 6;
-    return Queue;
-}());
-exports.Queue = Queue;
-function returnValue(c) {
-    if (c.divisione == true) { // modulo per belluno
-        return "<div class=\"card\" id=\"cards\">\n        <div class=\"card-body\">\n        <h5 class=\"card-title\">".concat(c.name, "</h5>\n        <!-- <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6> -->\n        <p class=\"card-text\">").concat(c.info, "</p>\n        </div>\n        </div>\n        <div>\n            <ul class=\"list-group\">\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkAspiranti, "\" class=\"card-link\">Clicca per diventare Donatore!</a>\n                </li>\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkDonatori, "\" class=\"card-link\">Clicca per prenotare la donazione!</a>\n                </li>\n            </ul>\n        </div>");
-    }
-    else {
-        if (c.regionale == true) { // modulo regionale
-            return "<div class=\"card\" id=\"cards\">\n        <div class=\"card-body\">\n        <h5 class=\"card-title\">".concat(c.name, "</h5>\n        <p class=\"card-text\">").concat(c.info, "</p>\n        </div>\n        </div>\n        <div>\n            <ul class=\"list-group\">\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkAspiranti, "\" class=\"card-link\">Clicca per diventare Donatore!</a>\n                </li>\n                <li class=\"list-group-item\">\n                    <a href=\"").concat(c.linkDonatori, "\" class=\"card-link\">Clicca per prenotare la donazione!</a>\n                </li>\n            </ul>\n        </div>");
-        }
-        else { // modulo nazionale
-            return "<div class=\"card\" id=\"cards\">\n            <div class=\"card-body\">\n            <h5 class=\"card-title\">".concat(c.name, "</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">Modulo Nazionale</h6>\n            <p class=\"card-text\">").concat(c.info, "</p>\n            </div>\n            </div>\n            <div>\n                <ul class=\"list-group\">\n                    <li class=\"list-group-item\">\n                        <a href=\"").concat(c.linkAspiranti, "\" class=\"card-link\">Clicca per diventare Donatore!</a>\n                    </li>\n                    <li class=\"list-group-item\">\n                        <a href=\"").concat(c.linkDonatori, "\" class=\"card-link\">Clicca per prenotare la donazione!</a>\n                    </li>\n                </ul>\n            </div>");
-        }
-    }
-    return "<div class=\"card\" id=\"cards\">\n    <div class=\"card-body\">\n    <h5 class=\"card-title\">".concat(c.name, "</h5>\n    <!-- <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6> -->\n    <p class=\"card-text\">").concat(c.info, "</p>\n    </div>\n    </div>\n    <div>\n        <ul class=\"list-group\">\n            <li class=\"list-group-item\">\n                <a href=\"").concat(c.linkAspiranti, "\" class=\"card-link\">Clicca per diventare Donatore!</a>\n            </li>\n            <li class=\"list-group-item\">\n                <a href=\"").concat(c.linkDonatori, "\" class=\"card-link\">Clicca per prenotare la donazione!</a>\n            </li>\n        </ul>\n    </div>");
-}
-exports.returnValue = returnValue;
-exports.idList = {
+export const idList = {
     "el1": {
         "id": "#Rimini",
         "name": "Rimini",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale."
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato."
     },
     "el2": {
         "id": "#Rimini-ForliCesena",
         "name": "Rimini Forlì Cesena",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -69,7 +20,7 @@ exports.idList = {
         "name": "Ravenna",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -78,7 +29,7 @@ exports.idList = {
         "name": "Ferrara",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -87,7 +38,7 @@ exports.idList = {
         "name": "Bologna",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -96,7 +47,7 @@ exports.idList = {
         "name": "Modena",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -105,7 +56,7 @@ exports.idList = {
         "name": "Reggio Emilia",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -114,7 +65,7 @@ exports.idList = {
         "name": "Parma",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -123,7 +74,7 @@ exports.idList = {
         "name": "Piacenza",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -132,7 +83,7 @@ exports.idList = {
         "name": "Pavia",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -141,7 +92,7 @@ exports.idList = {
         "name": "Milano e Lodi",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -150,7 +101,7 @@ exports.idList = {
         "name": "Cremona e Mantova",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -159,7 +110,7 @@ exports.idList = {
         "name": "Brescia",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -168,7 +119,7 @@ exports.idList = {
         "name": "Bergamo",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -177,7 +128,7 @@ exports.idList = {
         "name": "Como, Lecco e Monza-Brianza",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -186,7 +137,7 @@ exports.idList = {
         "name": "Varese",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -195,7 +146,7 @@ exports.idList = {
         "name": "Sondrio",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -204,57 +155,67 @@ exports.idList = {
         "name": "Bolzano",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
     "el19": {
         "id": "#Trento",
         "name": "Trento",
-        "info": "Informazioni per la zona del Primiero e per chi usufruisce dell'ospedale di Feltre",
+        "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
-        "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx"
+        "linkDonatori": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
+        "divisione": false,
+        "regionale": true
     },
     "el20": {
         "id": "#Verona",
         "name": "Verona",
-        "info": "Qualche informazione utile",
+        "info": "Una volta compilato il modulo verrai ricontattato via mail",
         "linkAspiranti": "fidasverona.it/it/vorrei-diventare-donatore",
-        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione"
+        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
+        "divisione": false
     },
     "el21": {
         "id": "#Vicenza",
         "name": "Vicenza",
-        "info": "Qualche informazione utile",
+        "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSeN5Po_FS4or8FfKS2u-mjCZAbRu1TEz-tBEtvceLJUkj3nWQ/viewform",
-        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione"
+        "linkDonatori": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione",
+        "divisione": false
     },
     "el22": {
         "id": "#Padova",
         "name": "Padova",
-        "info": "Per iscriverti premi qui. ",
+        "info": "",
         "linkAspiranti": "https://form.jotform.com/212316458894363",
-        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link"
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSeGcD5qFaPXhUjzRZtD3A1cNCQMNxlFngAOq-rmAIx6cF-Pfw/viewform?usp=sf_link",
+        "divisione": false
     },
     "el23": {
         "id": "#Rovigo",
         "name": "Rovigo",
-        "info": "Per diventare donatore o prenotare la donazione clicca qui",
+        "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
-        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link"
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSet0hVtdq_CdZYyvZFUDtj3sOWGd7-U1aIf4K3Ppd0KftW49A/viewform?usp=sf_link",
+        "divisione": false
     },
     "el24": {
         "id": "#Treviso",
         "name": "Treviso",
-        "info": "Per diventare donatore o prenotare la donazione clicca qui",
+        "info": "",
         "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
-        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link"
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSfehHxfzrq8cI8upXafRSYz_tsdHjBrJP_jZqdVZFCMYs7dSg/viewform?usp=sf_link",
+        "divisione": false
     },
     "el25": {
         "id": "#Belluno",
         "name": "Belluno",
-        "info": "Per diventare donatore o prenotare la donazione clicca qui",
-        "link": "https://example.com",
+        "info": "",
+        "linkAspirantiFeltre": "https://docs.google.com/forms/d/e/1FAIpQLSeRG1rvz0OPpsVuUMR7JGXAw3XujX3E7jsz1TwYvTeerE1K8w/viewform?usp=sf_link",
+        "linkAspirantiBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
+        "linkDonatoriFeltre": "https://www.ulssfeltre.veneto.it/AriannaCup/PortaleCittadinoWeb/WebForms/ScegliPrenotazione.aspx",
+        "linkDonatoriBelluno": "https://forms.gle/MTrq66oQVn41xqhD7",
         "divisione": true
     },
     "el26": {
@@ -262,7 +223,7 @@ exports.idList = {
         "name": "Pordenone",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -271,34 +232,37 @@ exports.idList = {
         "name": "Udine",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
     "el28": {
         "id": "#Venezia2",
         "name": "Venezia",
-        "info": "Qualche informazione utile",
-        "link": "https://example.com"
+        "info": "",
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
     },
     "el29": {
         "id": "#Venezia1",
         "name": "Venezia",
-        "info": "Qualche informazione utile",
-        "link": "https://example.com"
+        "info": "",
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
     },
     "el30": {
         "id": "#Venezia3",
         "name": "Venezia",
-        "info": "Qualche informazione utile",
-        "link": "https://example.com"
+        "info": "",
+        "linkDonatori": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link",
+        "linkAspiranti": "https://docs.google.com/forms/d/e/1FAIpQLSdO1FCQRS1d6Scrte0fZwuuCOFK4CQxhh9AJE_tZp-hHF1GvA/viewform?usp=sf_link"
     },
     "el31": {
         "id": "#Gorizia2",
         "name": "Gorizia",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     },
@@ -307,7 +271,7 @@ exports.idList = {
         "name": "Gorizia",
         "linkDonatori": "https://fidas.it/dona-ora/",
         "linkAspiranti": "https://fidas.it/dona-ora/",
-        "info": "Non sono ancora disponibili informazioni più attendibili. Consultare il sito nazionale.",
+        "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
         "divisione": false,
         "regionale": true
     }
