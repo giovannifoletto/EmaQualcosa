@@ -1,7 +1,7 @@
-# Documentations and Infos
+# WORKING!!
 
-Nella repository sono disponibili diversi file, divisi in queste sottocartelle:
-- 
+L'applicazione lavora anche come static-applications, appena compilata. Tutto il codice sorgente è presente in `/build`.
+
 
 ## DATA and DATA FORMAT NEEDED
 ```json
