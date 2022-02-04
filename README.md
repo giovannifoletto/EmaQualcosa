@@ -1,34 +1,28 @@
-# EmaQualcosa
+# WORKING!!
 
-- [x] False/True in caso di sito nazionale sulle regioni senza sito regionale
-    - [x] Link feltre e belluno che sono divisi
+L'applicazione lavora anche come static-applications, appena compilata. Tutto il codice sorgente è presente in `/build`.
 
-- [ ] sorta di documentazione o qualche commento, oppure la prossima volta non capisco più nulla del funzionemento
-- [x] "se manca la tua provincia clicca qui!" => da aggiungere
-- [x] Refactor index.html-start.html, infatti la index.html deve essere l'attuale start.html
-- [x] change the card sections, change link in the click functions
 
-## TO DO BEFORE ONLINE
-- [x] check names and spelling
-- [ ] check compatibility thought mobile phones
-- [x] update site name and content
-- [x] update copiryght site name 
-- [x] update mailto footer and google contacts
-
-## Spiegazione:
-
-- dati nel file `json` sono disposti:
+## DATA and DATA FORMAT NEEDED
 ```json
-"el1": {
-        "id": string,
-        "name": string,
-        "linkDonatori": string,
-        "linkAspiranti": string,
-        "info": string,
-        "divisione": bool,
-        "regionale": bool
+list = [
+    {
+        "id" : string,      // id value of the path => needed for the reaction at the event
+        "name" : string,    // Name of the Region
+        "regionale" : bool, // if the site is regional 
+        "statale" : bool,   // if the site is the national one
+        "info" : string,    // info to display if needed
+        "links" : [         // array of links
+            {
+                "linkName" : string,         // name of the link (aspirante/donatore)
+                "linkValue" : string,        // link's URL
+                "textToBeRendered" : string, // content of the action's button of this link 
+            }, {
+                "linkName" : string,         // same as over
+                "linkValue" : string,
+                "textToBeRendered" : string
+            }
+        ]
     }
+]
 ```
-    (serve sempre la virgola a parte se è l'ultimo elemento)
-    - `divisione` serve per le regioni che hanno più di un associazione per le donazioni, e quindi hanno 4 o più link diversi
-    - `regionale: true` se hanno un sito regionale, se no riporta al sito nazionale di fidas
