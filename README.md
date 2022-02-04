@@ -1,6 +1,14 @@
+```
+    authors: @giovannifoletto
+    with SvelteKit
+```
+
+
 # WORKING!!
 
 L'applicazione lavora anche come static-applications, appena compilata. Tutto il codice sorgente è presente in `/build`.
+
+
 
 
 ## DATA and DATA FORMAT NEEDED
