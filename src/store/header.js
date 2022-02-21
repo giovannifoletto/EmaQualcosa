@@ -577,7 +577,7 @@ export const idList = [{
         ]
     },
     {
-        "id": "Gorizia2",
+        "id": "Gorizia",
         "name": "Gorizia",
         "regionale": true,
         "statale": false,
@@ -595,8 +595,8 @@ export const idList = [{
         ]
     },
     {
-        "id": "Gorizia",
-        "name": "Gorizia",
+        "id": "Trieste",
+        "name": "Trieste",
         "regionale": true,
         "statale": false,
         "info": "Pagina ancora in fase di costruzione. Lascia i tuoi contatti al seguente modulo e sarai ricontattato.",
