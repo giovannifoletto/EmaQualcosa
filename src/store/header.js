@@ -395,7 +395,7 @@ export const idList = [{
         "links": [{
                 "linkName": "Link per Donatori",
                 "textToBeRendered": "Clicca qui per prenotare la tua donazione",
-                "linkValue": "https://www.fidasverona.it/it/vorrei-prenotare-la-donazione"
+                "linkValue": "https://www.fidasvicenza.com/it/donare-il-sangue/prenotarsi-on-line.aspx"
             },
             {
                 "linkName": "Link per Aspiranti Donatori",

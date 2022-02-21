@@ -12,7 +12,7 @@
             <div class="pb-3">
                 <a href="/start" class="btn btn-lg btn-danger text-wrap">Prenota la visita di idoneità o la donazione nel punto più vicino!</a>     
             </div>
-    
+            <img src="/front-logo.jpg" alt="Simply Easy Learning" width="600" height="240">
 </div>
 
 

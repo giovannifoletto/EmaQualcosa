@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
-    <h1 class="text-center">Donatori Sangue Triveneto</h1>    
+    <img src="/logo.jpg" alt="Simply Easy Learning" width="100" height="100"> 
+	<h1 class="text-center">Fidas Giovani</h1>   
+	
 </nav>
 
 <style>
