@@ -5,6 +5,10 @@
 
     const hovResponse = (event) => {
         //console.log(event.target.id);
+        //console.log(window.screen.width);
+        if(window.screen.width < 576){
+         window.scrollBy(0, 1200);
+        }
         dispatch('hovResponseEvent', {
             text: event.target.id,
         });
